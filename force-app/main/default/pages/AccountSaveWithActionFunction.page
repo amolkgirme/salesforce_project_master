@@ -1,0 +1,21 @@
+<apex:page controller="Accountcls" id="pg">
+    <apex:form id="frm">
+        <apex:actionFunction name="callSave" action="{saveAccount}"/>
+        <apex:pageBlock id="pb">
+        <apex:pageBlockSection title="Account Info" id="actB1">
+            <apex:inputField value="{!actObj.Name}"/>
+            <apex:inputField value="{!actObj.Type}" id="type"/>
+             <!-- <apex:inputField value="{actObj.Industry}"/> -->
+            <apex:inputField value="{!actObj.Phone}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Account Info" id="actB2">
+            <apex:inputField value="{!actObj.Name}"/>
+            <apex:inputField value="{!actObj.Type}" id="type"/>
+             <!-- <apex:inputField value="{actObj.Industry}"/> -->
+            <apex:inputField value="{!actObj.Phone}"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>

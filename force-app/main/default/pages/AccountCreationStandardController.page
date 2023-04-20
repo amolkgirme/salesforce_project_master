@@ -1,0 +1,26 @@
+<apex:page controller="AccountSaveCls" extensions="AccountRecordCls">
+    <apex:form>
+        <apex:pageBlock title="Account Info">                                                                                                                       
+            <apex:pageBlockSection title="Company Information">
+                <apex:inputField value="{!actObj.Name}"></apex:inputField>
+                <apex:inputField value="{!actObj.Type}"></apex:inputField>
+                <apex:inputField value="{!actObj.Rating}"></apex:inputField>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Addition Information">
+                <apex:inputField value="{!actObj.Customer__c}"></apex:inputField>
+                <apex:inputField value="{!actObj.NoOfLocation__c}"></apex:inputField>
+            </apex:pageBlockSection>
+                <apex:pageBlockButtons location="top">
+                <apex:commandButton value="save" action="{!saveAccount}"></apex:commandButton>
+                </apex:pageBlockButtons>  
+        </apex:pageBlock>
+        <apex:pageBlock title="Account Records">
+        <apex:pageBlockTable value="{!accountList}" var="actRec">
+            <apex:column value="{!actRec.Name}"/>
+            <apex:column value="{!actRec.Type}"/>
+            <apex:column value="{!actRec.Rating}"/>
+            <apex:column value="{!actRec.Customer__c}"/>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

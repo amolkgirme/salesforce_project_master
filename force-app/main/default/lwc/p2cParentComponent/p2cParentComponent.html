@@ -1,0 +1,27 @@
+<template>
+    <!-- Example for simple data -->
+    <div>
+        <c-p2c-alert-component
+        message="Welcome to Saleforce"
+        card-heading="Parent to child primitive data communication"
+        is-valid=false
+        number=20></c-p2c-alert-component>
+    </div>
+    <!-- Example for complex data -->
+    <div class="slds-var-m-around_medium">
+        <c-p2c-carousel-component carousel-details={carouselData}></c-p2c-carousel-component>
+    </div>
+<!-- Example of data paassinh an action -->
+<div class="slds-var-m-bottom_medium">
+    <lightning-card>
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="number" min="1" max="99" label="Enter Percentage" onkeyup={handlechange}></lightning-input>
+            <c-p2c-progress-component progress-value={percentage}></c-p2c-progress-component>
+        </div>
+    </lightning-card>
+</div>
+<div class="slds-var-m-bottom_medium">
+    <lightning-button variant="brand" label="Reset slider" onclick={handleClick}></lightning-button>
+    <c-p2c-slider-component></c-p2c-slider-component>
+</div>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    
+
+    <template if:true={conList}>
+        <div>
+            <lightning-button variant="brand-outline" label="Show Contact" title="Successful action" onclick={showContact} class="slds-m-left_x-small"></lightning-button>
+            <p style="color:blue;font-size:20px;">Total Contacts: {length}</p>
+        </div>
+        
+        <template for:each={conList} for:item="obj" for:index="index">
+            <p key={obj.id}> {index} ) {obj.Name} {obj.Phone}  </p>
+        </template>
+    </template>
+    <p if:true={error}> {error} </p>
+</template>

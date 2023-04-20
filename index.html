@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Dom</title>
+    <style>
+        p{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="fetchElement()">Show Element</button>
+    <div>
+        <p>Thanks for choosing zero to hero</p>
+    </div>
+    <div id="host"></div>
+    <script>
+        const elm =document.querySelector('#host')
+        const shadowRoot = elm.attachShadow({mode:'open'})
+        shadowRoot.innerHTML ='<p> I am shadow DOM </p>'
+        function fetchElement(){
+            let tags= document.querySelectorAll('p')
+            console.log(tags)
+        }
+    </script>
+</body>
+</html>
