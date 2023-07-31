@@ -2,7 +2,7 @@
 <aura:attribute name="messageValue" type="String"/>
 <aura:attribute name="messageReceived" type="String"/>
 
-<lightning:messageChannel type="SampleMessageChannel__c"
+<lightning:messageChannel type="SAMPLEMESSAGECHANNEL__c"
 aura:id="SampleMessageChannel"
 onMessage="{!c.handleMessage}"
 scope="APPLICATION"/>
@@ -24,4 +24,4 @@ scope="APPLICATION"/>
        <lightning:formattedText value="{!v.messageReceived}"/>
     </div>
 </lightning:card>
-</aura:component>	
+</aura:component>

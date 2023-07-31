@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="getPicklistValues Adapter">
+        <div class="slds-var-p-around_medium">
+            <lightning-combobox
+                    name="industry"
+                    label="Industry"
+                    value={selectedIndustry}
+                    placeholder="Select Industry"
+                    options={industryOptions}
+                    onchange={handleChange} ></lightning-combobox>
+        
+            <p>Selected Industry is: {selectedIndustry}</p>
+      
+    </div>
+        <div class="slds-var-p-around_medium">
+            <lightning-combobox
+                    name="rating"
+                    label="Rating"
+                    value={selectedRating}
+                    placeholder="Select Rating"
+                    options={ratingOptions}
+                    onchange={handleChange} ></lightning-combobox>
+        
+            <p>Selected Rating is: {selectedRating}</p>
+      
+    </div>
+    </lightning-card>
+</template>

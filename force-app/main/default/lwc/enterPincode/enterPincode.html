@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  title="Get address">
+            <div class="slds-p-around_medium">
+                ENTER PIN :<lightning-input type="text" onchange={addPin}></lightning-input>
+            </div>
+            <div class="slds-p-around_medium">
+                <button class="slds-button slds-button_brand" onclick={handleclick}>Get Data</button>
+            </div>
+            <template if:true={showaddress}>
+                <div>
+                    <p>{address}</p>
+                </div>
+            </template>
+            
+            
+        
+        
+    </lightning-card>
+</template>

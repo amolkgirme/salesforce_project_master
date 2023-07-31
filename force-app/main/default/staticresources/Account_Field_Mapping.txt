@@ -1,0 +1,6 @@
+{
+    "Name":"Deleted_Account_Name__c",
+    "Industry":"Industry__c",
+    "Rating":"Rating__c",
+    "Type":"Type__c"
+}
