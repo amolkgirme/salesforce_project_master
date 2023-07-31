@@ -1,30 +1,20 @@
-trigger AccountTrigger on Account (before insert, before update, before delete, after insert, after update) {
-    //Trigger_setting__c  objTriggerSetting = Trigger_setting__c.getInstance('AccountTrigger');
-    if(Trigger_setting__c.getInstance('AccountTrigger')!=Null && Trigger_setting__c.getInstance('AccountTrigger').is_Active__c==True){
-        if(Trigger.isafter && Trigger.isInsert){
-            //AccountTriggerHandler.updateContactName(Trigger.new);
-            
-        }
-        if(Trigger.isbefore && Trigger.isdelete){
-            //AccountTriggerHandler.preventDelete(Trigger.old);
-        }
-        if(Trigger.isafter && Trigger.isupdate){
-            //AccountTriggerHandler.updateContactPhone(Trigger.new, Trigger.oldMap);
-        }
-        if(Trigger.isbefore &&(Trigger.isinsert || Trigger.isupdate)){
-            //AccountTriggerHandler.populateBillingAddress(Trigger.new);
-        }
-        if(Trigger.isafter && Trigger.isupdate){
-            //AccountTriggerHandler.populateAccountStageToOpportunity(Trigger.new);
-            //AccountTriggerHandler.deleteContact(Trigger.new, Trigger.oldMap);
-        }
-        if(Trigger.isbefore && (Trigger.isinsert || Trigger.isupdate)){
-            //AccountTriggerHandler.preventDuplicationOfAccount(Trigger.new);
-            
-        }
-        if(Trigger.isafter && Trigger.isinsert || Trigger.isupdate){
-            //AccountTriggerHandler.updateOpportunity(Trigger.new, Trigger.oldMap);
-        }        
-    }
+Trigger AccountTrigger on Account (after insert, after update, after delete, after undelete){
+    /*
+    1)  Trigger.isInsert    => Trigger.NewMap   || null
+    2)  Trigger.isUpdate    => Trigger.NewMap   || Trigger.oldMap
+    3)  Trigger.isDelete    =>  NULL || Trigger.oldMap
+    3)  Trigger.isUndelete  =>  Trigger.newMap  || NULL
     
-}
+    */
+
+    // List<Account> accList = Trigger.isDelete ? Trigger.Old : Trigger.new;
+    // if(Trigger.isAfter){
+    //      AccountTriggerHandler.countAccountForUser(Trigger.isUpdate,accList,Trigger.newMap,Trigger.oldMap);
+    //}
+    if(Trigger.isAfter && Trigger.isDelete){
+         AccountTriggerHandler.mapAccountToAccountArchieves(Trigger.OldMap);
+    }
+    if(Trigger.isAfter && Trigger.isUndelete){
+         AccountTriggerHandler.mapAccountToAccountArchieves(Trigger.NewMap);
+    }
+    }

@@ -1,0 +1,7 @@
+<aura:component >
+    <div class="slds-p-around_x-small slds-box slds-box_small hello">
+         <p> Hello Everyone </p>
+     </div>
+   
+    <lightning:button variant="brand" label="Show Message" title="Show Message" onclick="{!c.displayMessage}"/>
+</aura:component>
